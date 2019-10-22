@@ -18,7 +18,7 @@ const port = process.env.PORT || config.get("port");
 
 // declare your callback function the old way
 app.get('/', function (req, res) {
-  res.send('Welcome to the Node.js Httpp module page!  <br> <br>' +
+  res.send('Welcome to the Node.js Http module page!  <br> <br>' +
     'Try going to different URIs by adding these at the end: <br> <br>' +
      '/The Built-in HTTP Module <br>' +
     '/Node.js as a WebServer <br>'+
