@@ -23,11 +23,11 @@ app.get('/', function (req, res) {
     // '/hello <br>' +
     // '/big <br>' +
     // '/json <br>' +
-    '/The Built-in HTTP Module <br>' +
-    '/Node.js as a Web Server <br>'+
-    '/Add an HTTP Header <br>' +
-    '/Read the Query String <br>'+
-    '/Split the Query String <br>' +
+    '/TheBuilt-inHTTPModule <br>' +
+    '/Node.jsasaWebServer <br>'+
+    '/AddanHTTPHeader <br>' +
+    '/ReadtheQueryString <br>'+
+    '/SplittheQueryString <br>' +
     // '/greeting/yourname <br>' +
     // '/yo/Dr.Rogers <br>' +
     // '/fortune <br>' +
@@ -39,22 +39,22 @@ app.get('/', function (req, res) {
 
 // or use the new arrow function syntax
 // respond with text
-app.get('/The Built-in HTTP Module', (req, res) => {
+app.get('/TheBuilt-inHTTPModule', (req, res) => {
   res.send('Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the HTTP. to include HTTP module,use require() method')
 })
 
 // or respond with html
-app.get('/Node.js as a Web Server', (req, res) => {
+app.get('/Node.jsasaWebServer', (req, res) => {
   res.send('Use the createServer() method to create an HTTP server:')
 })
 
 // or respond with JSON
-app.get('/Add an HTTP Header', (req, res) => {
+app.get('/AddanHTTPHeader', (req, res) => {
   res.send('If the response from the HTTP server is supposed to be displayed as HTML, you should include an HTTP header with the correct content type:')
 })
 
 // :name indicates a parameter at this location in the URI
-app.get('/Read the Query String', (req, res) => {
+app.get('/ReadtheQueryString', (req, res) => {
   res.send('The function passed into the http.createServer() has a req argument that represents the request from the client, as an object ')
 })
 
