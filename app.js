@@ -18,15 +18,20 @@ const port = process.env.PORT || config.get("port");
 
 // declare your callback function the old way
 app.get('/', function (req, res) {
-  res.send('Welcome to the default page!  <br> <br>' +
+  res.send('Welcome to the Node.js Httpp module page!  <br> <br>' +
     'Try going to different URIs by adding these at the end: <br> <br>' +
-    '/hello <br>' +
-    '/big <br>' +
-    '/json <br>' +
-    '/greeting/yourname <br>' +
-    '/yo/Dr.Rogers <br>' +
-    '/fortune <br>' +
-    '/fancy/?first=Denise&last=Case <br>' +
+    // '/hello <br>' +
+    // '/big <br>' +
+    // '/json <br>' +
+    '/The Built-in HTTP Module <br>' +
+    '/Node.js as a Web Server <br>'+
+    '/Add an HTTP Header <br>' +
+    '/Read the Query String <br>'+
+    '/Split the Query String <br>' +
+    // '/greeting/yourname <br>' +
+    // '/yo/Dr.Rogers <br>' +
+    // '/fortune <br>' +
+    // '/fancy/?first=Denise&last=Case <br>' +
     '<br> <br>' +
     'Fork the source code from <a href="https://github.com/denisecase/node-express-app">https://github.com/denisecase/node-express-app</a>'
   )
@@ -34,53 +39,53 @@ app.get('/', function (req, res) {
 
 // or use the new arrow function syntax
 // respond with text
-app.get('/hello', (req, res) => {
-  res.send('Hello World!')
+app.get('/The Built-in HTTP Module', (req, res) => {
+  res.send('Node.js has a built-in module called HTTP, which allows Node.js to transfer data over the HTTP. to include HTTP module,use require() method')
 })
 
 // or respond with html
-app.get('/big', (req, res) => {
-  res.send('<h1>Hello World!</h1>')
+app.get('/Node.js as a Web Server', (req, res) => {
+  res.send('Use the createServer() method to create an HTTP server:')
 })
 
 // or respond with JSON
-app.get('/json', (req, res) => {
-  res.send('{"name" : "Nandini"}')
+app.get('/Add an HTTP Header', (req, res) => {
+  res.send('If the response from the HTTP server is supposed to be displayed as HTML, you should include an HTTP header with the correct content type:')
 })
 
 // :name indicates a parameter at this location in the URI
-app.get('/greeting/:id', (req, res) => {
-  res.send(`Hello! The id provided was ${req.params.id}.`)
+app.get('/Read the Query String', (req, res) => {
+  res.send('The function passed into the http.createServer() has a req argument that represents the request from the client, as an object ')
 })
 
 // combine your skills and get creative
-app.get('/yo/:buddy', (req, res) => {
-  res.send(`<h1>Yo, ${req.params.buddy}!</h1>`)
-})
+// app.get('/yo/:buddy', (req, res) => {
+//   res.send(`<h1>Yo, ${req.params.buddy}!</h1>`)
+// })
 
-// provide multiple query parameters (named first and last) with ? and &
-app.get('/fancy', (req, res) => {
-  const first = req.query.first
-  const last = req.query.last
-  res.send(`Hello ${first} ${last}!`)
-})
+// // provide multiple query parameters (named first and last) with ? and &
+// app.get('/fancy', (req, res) => {
+//   const first = req.query.first
+//   const last = req.query.last
+//   res.send(`Hello ${first} ${last}!`)
+// })
 
-let fortunes = ['It is certain.', 'It is decidedly so.', 'Without a doubt.', 'Yes - definitely.',
-'You may rely on it', 'As I see it, yes.', 'Most likely', 'Outlook good.', 'Yes.', 'Signs point to yes.',
-'Reply hazy, try again.', 'Ask again later.', 'Better not tell you now.', 'Cannot predict now.', 
-'Concentrate and ask again.', 'Don\'t count on it.', 'My reply is no.', 'My sources say no.', 'Outlook not so good.',
-'Very doubtful.']
+// let fortunes = ['It is certain.', 'It is decidedly so.', 'Without a doubt.', 'Yes - definitely.',
+// 'You may rely on it', 'As I see it, yes.', 'Most likely', 'Outlook good.', 'Yes.', 'Signs point to yes.',
+// 'Reply hazy, try again.', 'Ask again later.', 'Better not tell you now.', 'Cannot predict now.', 
+// 'Concentrate and ask again.', 'Don\'t count on it.', 'My reply is no.', 'My sources say no.', 'Outlook not so good.',
+// 'Very doubtful.']
 
-// Implements a Magic 8 Ball service
-app.get('/fortune', (req,res) => {
-  if(isEmpty(req.query)){
-    res.send('<h2>You wish to know the future?</h2>' +
-             '<p>Ask a question in the query string, e.g., http://localhost:3002/fortune?Will I become rich? <br/>' +
-             '<p>The Magic 8 Ball will answer!</p>')
-  } else {
-    res.send(`The answer is ... wait for it ... ${fortunes[randomInt(0, fortunes.length)]}`)
-  }
-})
+// // Implements a Magic 8 Ball service
+// app.get('/fortune', (req,res) => {
+//   if(isEmpty(req.query)){
+//     res.send('<h2>You wish to know the future?</h2>' +
+//              '<p>Ask a question in the query string, e.g., http://localhost:3002/fortune? <br/>' +
+//              '<p>The Magic 8 Ball will answer!</p>')
+//   } else {
+//     res.send(`The answer is ... wait for it ... ${fortunes[randomInt(0, fortunes.length)]}`)
+//   }
+// })
 
 // Use middleware to handle all non-managed routes (e.g. /xyz)
 // https://expressjs.com/en/api.html#req.originalUrl
@@ -92,13 +97,13 @@ app.use((req, res, next) => {
 app.listen(port, hostname, () => {
   console.log(`\n App listening at http://${hostname}:${port}/`)
   console.log(`\n Try going to different URIs:\n`)
-  console.log(`   Try /hello`)
-  console.log(`   Try /big`)
-  console.log(`   Try /json`)
-  console.log(`   Try /fortune`)
-  console.log(`   Try /greeting/yourname`)
-  console.log(`   Try /yo/Dr.Rogers`)
-  console.log(`   Try /fancy/?first=Denise&last=Case`)
+  console.log(`   Try /The Built-in HTTP Module`)
+  console.log(`   Try /Node.js as a Web Server`)
+  console.log(`   Try /Add an HTTP Header`)
+  // console.log(`   Try /fortune`)
+  console.log(`   Try /Read the Query String `)
+  console.log(`   Try /Split the Query String`)
+  // console.log(`   Try /fancy/?first=Denise&last=Case`)
   console.log('\n Hit CTRL-C CTRL-C to stop\n')
 })
 
