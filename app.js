@@ -20,18 +20,12 @@ const port = process.env.PORT || config.get("port");
 app.get('/', function (req, res) {
   res.send('Welcome to the Node.js Httpp module page!  <br> <br>' +
     'Try going to different URIs by adding these at the end: <br> <br>' +
-    // '/hello <br>' +
-    // '/big <br>' +
-    // '/json <br>' +
-    '/TheBuilt-inHTTPModule <br>' +
-    '/Node.jsasaWebServer <br>'+
-    '/AddanHTTPHeader <br>' +
-    '/ReadtheQueryString <br>'+
-    '/SplittheQueryString <br>' +
-    // '/greeting/yourname <br>' +
-    // '/yo/Dr.Rogers <br>' +
-    // '/fortune <br>' +
-    // '/fancy/?first=Denise&last=Case <br>' +
+     '/The Built-in HTTP Module <br>' +
+    '/Node.js as a WebServer <br>'+
+    '/Add an HTTP Header <br>' +
+    '/Read the Query String <br>'+
+    '/Split the Query String <br>' +
+    
     '<br> <br>' +
     'Fork the source code from <a href="https://github.com/denisecase/node-express-app">https://github.com/denisecase/node-express-app</a>'
   )
@@ -59,33 +53,10 @@ app.get('/ReadtheQueryString', (req, res) => {
 })
 
 // combine your skills and get creative
-// app.get('/yo/:buddy', (req, res) => {
-//   res.send(`<h1>Yo, ${req.params.buddy}!</h1>`)
-// })
+app.get('/SplittheQueryString', (req, res) => {
+  res.send('There are built-in modules to easily split the query string into readable parts, such as the URL module.')
+})
 
-// // provide multiple query parameters (named first and last) with ? and &
-// app.get('/fancy', (req, res) => {
-//   const first = req.query.first
-//   const last = req.query.last
-//   res.send(`Hello ${first} ${last}!`)
-// })
-
-// let fortunes = ['It is certain.', 'It is decidedly so.', 'Without a doubt.', 'Yes - definitely.',
-// 'You may rely on it', 'As I see it, yes.', 'Most likely', 'Outlook good.', 'Yes.', 'Signs point to yes.',
-// 'Reply hazy, try again.', 'Ask again later.', 'Better not tell you now.', 'Cannot predict now.', 
-// 'Concentrate and ask again.', 'Don\'t count on it.', 'My reply is no.', 'My sources say no.', 'Outlook not so good.',
-// 'Very doubtful.']
-
-// // Implements a Magic 8 Ball service
-// app.get('/fortune', (req,res) => {
-//   if(isEmpty(req.query)){
-//     res.send('<h2>You wish to know the future?</h2>' +
-//              '<p>Ask a question in the query string, e.g., http://localhost:3002/fortune? <br/>' +
-//              '<p>The Magic 8 Ball will answer!</p>')
-//   } else {
-//     res.send(`The answer is ... wait for it ... ${fortunes[randomInt(0, fortunes.length)]}`)
-//   }
-// })
 
 // Use middleware to handle all non-managed routes (e.g. /xyz)
 // https://expressjs.com/en/api.html#req.originalUrl
@@ -97,13 +68,13 @@ app.use((req, res, next) => {
 app.listen(port, hostname, () => {
   console.log(`\n App listening at http://${hostname}:${port}/`)
   console.log(`\n Try going to different URIs:\n`)
-  console.log(`   Try /The Built-in HTTP Module`)
-  console.log(`   Try /Node.js as a Web Server`)
-  console.log(`   Try /Add an HTTP Header`)
-  // console.log(`   Try /fortune`)
-  console.log(`   Try /Read the Query String `)
-  console.log(`   Try /Split the Query String`)
-  // console.log(`   Try /fancy/?first=Denise&last=Case`)
+  console.log(`   Try /TheBuilt-inHTTPModule`)
+  console.log(`   Try /Node.jsasaWebServer`)
+  console.log(`   Try /AddanHTTPHeader`)
+ 
+  console.log(`   Try /ReadtheQueryString `)
+  console.log(`   Try /SplittheQueryString`)
+  
   console.log('\n Hit CTRL-C CTRL-C to stop\n')
 })
 
