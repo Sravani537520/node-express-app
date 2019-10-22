@@ -68,12 +68,12 @@ app.use((req, res, next) => {
 app.listen(port, hostname, () => {
   console.log(`\n App listening at http://${hostname}:${port}/`)
   console.log(`\n Try going to different URIs:\n`)
-  console.log(`   Try /TheBuilt-inHTTPModule`)
-  console.log(`   Try /Node.jsasaWebServer`)
-  console.log(`   Try /AddanHTTPHeader`)
+  console.log(`   Try /The Built-in HTTP Module`)
+  console.log(`   Try /Node.js as a WebServer`)
+  console.log(`   Try /Add an HTTP Header`)
  
-  console.log(`   Try /ReadtheQueryString `)
-  console.log(`   Try /SplittheQueryString`)
+  console.log(`   Try /Read the Query String `)
+  console.log(`   Try /Split the Query String`)
   
   console.log('\n Hit CTRL-C CTRL-C to stop\n')
 })
